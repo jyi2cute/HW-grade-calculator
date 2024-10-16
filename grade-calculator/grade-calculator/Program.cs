@@ -60,11 +60,14 @@
             }
 
             //Calculate an average for the grades and store in a new variable called "average".
-            var average = new int[] { 100, 92, 87, 200, -20, 52, 82, 75, 67, 88 };
-            double avg = Queryable.Average(average.AsQueryable());
-
+            int sum = 0;
+            int average = 0;
+            for (int i = 0; i < grades.Length; i++) {
+                sum += grades[i];
+            }
+            average = sum / grades.Length;
             //Display the final calculated average in the console.
-            Console.WriteLine("Your final calculated average = " + avg);
+            Console.WriteLine("Your final calculated average = " + average);
 
             //End the program with a print that says we have displayed all grades for that user
             Console.WriteLine("We have displayed all grades for " + studentName + ".");
